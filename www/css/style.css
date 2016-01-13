@@ -1,11 +1,12 @@
 /* Empty. Add your own CSS if you like */
 
 h2 {
+	margin-top: 150px !important;
 	width: 200px;
 	display: inline-block;
 }
 
-.clear-day::after,
+/*.clear-day::after,
 .clear-night::after,
 .rain::after,
 .snow::after,
@@ -16,8 +17,10 @@ h2 {
 .partly-cloudy-day::after,
 .partly-cloudy-night::after {
 	position: absolute;
-	right: 135px;
-	top: 100px;
+	z-index: 100;
+	right: 50px;
+	top: 20px;
+
 }
 
 .clear-day::after {
@@ -58,4 +61,4 @@ h2 {
 
 .partly-cloudy-night::after {
 	content: url(../img/Cloud-Moon.svg);
-}
+}*/
