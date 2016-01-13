@@ -1,0 +1,13 @@
+<ion-header-bar class="bar-stable">
+	<h1 class="title">Ionic Blank Starter</h1>
+</ion-header-bar>
+<ion-content ng-controller="weatherCtrl as weather">
+	<input type="text" id="zipWeather" ng-model="zip" placeholder="Zip"/><button ng-click="getZipWeather(zip)">Get</button>
+	<button ng-click="getWeather()">get some local weather shit</button>
+	<p ng-click="getLocation()">get some location shit</p>
+	<p ng-click="showOther()">get some other shit</p>
+	<h2 ng-class="weather.class">{{weather.temp}}°F</h2>
+	<h3>{{weather.desc}}</h3>
+	<h2>{{lat}} , {{long}}</h2>
+	<h1>{{poop}}</h1>
+</ion-content>

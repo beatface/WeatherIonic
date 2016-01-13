@@ -1,1 +1,61 @@
 /* Empty. Add your own CSS if you like */
+
+h2 {
+	width: 200px;
+	display: inline-block;
+}
+
+.clear-day::after,
+.clear-night::after,
+.rain::after,
+.snow::after,
+.sleet::after,
+.wind::after,
+.fog::after,
+.cloudy::after,
+.partly-cloudy-day::after,
+.partly-cloudy-night::after {
+	position: absolute;
+	right: 135px;
+	top: 100px;
+}
+
+.clear-day::after {
+	background-image: url(../Sun.png);
+}
+
+.clear-night::after {
+	background-image: url(../img/Moon.svg);
+}
+
+.rain::after {
+	background-image: url(../img/Cloud-Rain.svg);
+}
+
+.snow::after {
+	background-image: url(../img/Cloud-Snowflake.svg);
+}
+
+.sleet::after {
+	background-image: url(../img/Cloud-Snow.svg);
+}
+
+.wind::after {
+	background-image: url(../img/Wind.svg);
+}
+
+.fog::after {
+	background-image: url(../img/Cloud-Fog-Alt.svg);
+}
+
+.cloudy::after {
+	content: url(../img/Cloud.svg);
+}
+
+.partly-cloudy-day::after {
+	content: url(../img/Cloud-Sun.svg);	
+}
+
+.partly-cloudy-night::after {
+	content: url(../img/Cloud-Moon.svg);
+}
