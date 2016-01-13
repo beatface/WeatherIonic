@@ -1,64 +1,17 @@
 /* Empty. Add your own CSS if you like */
 
-h2 {
-	margin-top: 150px !important;
-	width: 200px;
+img {
+	margin-top: 10%;
+}
+
+#content {
+	text-align: center;
+}
+
+.forecast-day {
 	display: inline-block;
+	width: 20%;
+	margin: 1% 1.5%;
+	border: 1px solid lightgray;
+	border-radius: 3px;
 }
-
-/*.clear-day::after,
-.clear-night::after,
-.rain::after,
-.snow::after,
-.sleet::after,
-.wind::after,
-.fog::after,
-.cloudy::after,
-.partly-cloudy-day::after,
-.partly-cloudy-night::after {
-	position: absolute;
-	z-index: 100;
-	right: 50px;
-	top: 20px;
-
-}
-
-.clear-day::after {
-	background-image: url(../Sun.png);
-}
-
-.clear-night::after {
-	background-image: url(../img/Moon.svg);
-}
-
-.rain::after {
-	background-image: url(../img/Cloud-Rain.svg);
-}
-
-.snow::after {
-	background-image: url(../img/Cloud-Snowflake.svg);
-}
-
-.sleet::after {
-	background-image: url(../img/Cloud-Snow.svg);
-}
-
-.wind::after {
-	background-image: url(../img/Wind.svg);
-}
-
-.fog::after {
-	background-image: url(../img/Cloud-Fog-Alt.svg);
-}
-
-.cloudy::after {
-	content: url(../img/Cloud.svg);
-}
-
-.partly-cloudy-day::after {
-	content: url(../img/Cloud-Sun.svg);	
-}
-
-.partly-cloudy-night::after {
-	content: url(../img/Cloud-Moon.svg);
-}*/
