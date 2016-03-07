@@ -6,7 +6,7 @@
 			<input type="search" placeholder="Search" ng-model="search" ng-keypress="getZipWeather($event, search)">
 		</label>
 	</div>
-	<div id="content">
+	<div id="content" class="{{weather.iconName}}">
 		<h2>{{weather.city}}</h2>
 		<img src="{{weather.icon}}"></br>
 		<h2>{{weather.temp}}°F</h2>
