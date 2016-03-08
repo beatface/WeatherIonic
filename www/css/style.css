@@ -1,4 +1,3 @@
-/* Empty. Add your own CSS if you like */
 
 img {
 	margin-top: 10%;
@@ -8,10 +7,53 @@ img {
 	text-align: center;
 }
 
+#city-header {
+	padding-top: 15px;
+}
+
 .forecast-day {
 	display: inline-block;
 	width: 20%;
 	margin: 1% 1.5%;
-	border: 1px solid lightgray;
 	border-radius: 3px;
+	background: rgba(250, 255, 255, 0.6);
+}
+
+/* weather icons */
+.fog,
+.chancerain,
+.clear,
+.rain,
+.cloudy,
+.mostlycloudy,
+.partlycloudy,
+.snow {
+	background-repeat: no-repeat;
+	/*background-size: cover;*/
+	z-index: -1;
+}
+
+.fog {
+	background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/sm-bgds/fog.JPG) no-repeat center top;
+}
+.chancerain {
+	background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/sm-bgds/light-rain.JPG) no-repeat center top;
+}
+.clear {
+	background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/sm-bgds/clear-day.JPG) no-repeat center top;
+}
+.rain {
+	background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/sm-bgds/rain.JPG) no-repeat center top;
+}
+.cloudy {
+	background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/sm-bgds/cloudy.JPG) no-repeat center top;
+}
+.mostlycloudy {
+	background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/sm-bgds/heavy-clouds.JPG) no-repeat center top;
+}
+.partlycloudy {
+	background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/sm-bgds/fog.JPG) no-repeat center top;
+}
+.snow {
+	background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/sm-bgds/snow.JPG) no-repeat center top;
 }

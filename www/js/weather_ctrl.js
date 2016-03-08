@@ -8,12 +8,25 @@ starter.controller("weatherCtrl", function($scope, $http, $q) {
 	weather.temp = "--";
 	weather.desc = "--";
 
+	var weatherIcons = {
+		fog: "../img/weather-icons/day-light-clouds.png",
+		chancerain: "../img/weather-icons/day-light-rain.png",
+		clear: "../img/weather-icons/day-clear.png",
+		rain: "../img/weather-icons/day-heavy-rain.png",
+		cloudy: "../img/weather-icons/day-light-clouds.png",
+		mostlycloudy: "../img/weather-icons/day-cloudy.png",
+		partlycloudy: "../img/weather-icons/sun-clouds.png",
+		snow: "../img/weather-icons/day-snowy.png"
+	};
+
 	function setValues(result) {
+		const iconName = result.data.current_observation.icon;
+		weather.bkgd = iconName;
+		weather.allIcons = weatherIcons;
+		weather.icon = weatherIcons[iconName];
 		weather.forecastData = result.data.forecast.simpleforecast.forecastday;
 		weather.temp = result.data.current_observation.temp_f;
 		weather.desc = result.data.current_observation.weather;
-		weather.icon = result.data.current_observation.icon_url;
-		weather.iconName = result.data.current_observation.icon;
 		weather.city = result.data.current_observation.display_location.full;
 	}
 
@@ -23,15 +36,14 @@ starter.controller("weatherCtrl", function($scope, $http, $q) {
 		var city = result.data.current_observation.display_location.full;
 		var id = result.data.current_observation.station_id
 		history[city] = id;
-		console.log("search history is >>>>", history);
 		localStorage.setItem('searchHistory', JSON.stringify(history));
 		weather.searchHistory = JSON.parse(localStorage.getItem('searchHistory'));
 	}
 
 
-	//------------//
+	//----------------//
 	// GET SEARCH DATA
-	//------------//
+	//----------------//
 	$scope.getZipWeather = function(event, search) {
 		if (event.keyCode === 13) {
 			$http.get("http://api.wunderground.com/api/c038c875c4755d69/conditions/forecast/q/" + search + ".json")
@@ -46,7 +58,6 @@ starter.controller("weatherCtrl", function($scope, $http, $q) {
 	$scope.getOldSearch = function(search) {
 		$http.get("http://api.wunderground.com/api/c038c875c4755d69/conditions/forecast/q/" + search + ".json")
 		.then(function(result) {
-			console.log("all weather", result);
 			setValues(result);
 			setLocalStorage(result);
 		});
@@ -101,7 +112,6 @@ starter.controller("weatherCtrl", function($scope, $http, $q) {
 			setValues(result);
 			setLocalStorage(result);
 		});
-
 	});; //end q
 
 
