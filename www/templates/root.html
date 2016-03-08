@@ -1,25 +1,26 @@
 
-<ion-content ng-controller="weatherCtrl as weather">
+<!-- <ion-content ng-controller="weatherCtrl as weather"> -->
 	<div class="bar bar-header item-input-inset">
 		<label class="item-input-wrapper">
 			<i class="icon ion-ios-search placeholder-icon"></i>
 			<input type="search" placeholder="Search" ng-model="search" ng-keypress="getZipWeather($event, search)">
 		</label>
 	</div>
-	<div id="content">
-		<div class="{{weather.bkgd}}">
-			<h2 id="city-header">{{weather.city}}</h2>
-			<img src="{{weather.icon}}"></br>
-			<h2>{{weather.temp}}°F</h2>
-			<h5>{{weather.desc}}</h5>
-			<div class="forecast-day" ng-repeat="day in weather.forecastData">
-				<img src="{{weather.allIcons[day.icon]}}">
-				<p>Low: {{day.low.fahrenheit}}°F</p>
-				<p>High: {{day.high.fahrenheit}}°F</p>
+    <ion-slide-box on-slide-changed="slideChanged(index)">
+        <ion-slide ng-repeat="(key, value) in searchHistory">
+			<div id="content">
+				<div class="{{bkgd}}">
+					<h2 id="city-header">{{city}}</h2>
+					<img src="{{icon}}"></br>
+					<h2>{{temp}}°F</h2>
+					<h5>{{desc}}</h5>
+					<div class="forecast-day" ng-repeat="day in forecastData">
+						<img src="{{allIcons[day.icon]}}">
+						<p>Low: {{day.low.fahrenheit}}°F</p>
+						<p>High: {{day.high.fahrenheit}}°F</p>
+					</div>
+				</div>
 			</div>
-		</div>
-		<h5>Search history</h5>
-		<p ng-repeat="(key, value) in weather.searchHistory" ng-click="getOldSearch(key)">{{key}}</p>
-		<h1>{{poop}}</h1>
-	</div>
-</ion-content>
+		</ion-slide>
+    </ion-slide-box>
+<!-- </ion-content> -->

@@ -11,6 +11,14 @@ img {
 	padding-top: 15px;
 }
 
+/*.slider-slides {
+	width: 100% !important;
+}*/
+
+div.slider {
+	height: 92%;
+}
+
 .forecast-day {
 	display: inline-block;
 	width: 20%;

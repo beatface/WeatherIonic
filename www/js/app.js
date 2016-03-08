@@ -29,7 +29,8 @@ starter.run(function($ionicPlatform) {
 	// setup an abstract state for the tabs directive
 	.state('root', {
 		url: '/root',
-		templateUrl: 'templates/root.html'
+		templateUrl: 'templates/root.html',
+		controller: 'weatherCtrl'
 	});
 
 	// if none of the above states are matched, use this as the fallback

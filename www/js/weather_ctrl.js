@@ -1,12 +1,15 @@
-starter.controller("weatherCtrl", function($scope, $http, $q) {
+starter.controller("weatherCtrl", function($scope, $http, $q, $ionicSlideBoxDelegate) {
 
-	var weather = this;
+
+	// var weather = this;
 
 	$scope.lat = "--";
 	$scope.long = "--";
 
-	weather.temp = "--";
-	weather.desc = "--";
+	$scope.temp = "--";
+	$scope.desc = "--";
+
+	var searchArray;
 
 	var weatherIcons = {
 		fog: "../img/weather-icons/day-light-clouds.png",
@@ -21,13 +24,13 @@ starter.controller("weatherCtrl", function($scope, $http, $q) {
 
 	function setValues(result) {
 		const iconName = result.data.current_observation.icon;
-		weather.bkgd = iconName;
-		weather.allIcons = weatherIcons;
-		weather.icon = weatherIcons[iconName];
-		weather.forecastData = result.data.forecast.simpleforecast.forecastday;
-		weather.temp = result.data.current_observation.temp_f;
-		weather.desc = result.data.current_observation.weather;
-		weather.city = result.data.current_observation.display_location.full;
+		$scope.bkgd = iconName;
+		$scope.allIcons = weatherIcons;
+		$scope.icon = weatherIcons[iconName];
+		$scope.forecastData = result.data.forecast.simpleforecast.forecastday;
+		$scope.temp = result.data.current_observation.temp_f;
+		$scope.desc = result.data.current_observation.weather;
+		$scope.city = result.data.current_observation.display_location.full;
 	}
 
 	function setLocalStorage(result) {
@@ -37,8 +40,29 @@ starter.controller("weatherCtrl", function($scope, $http, $q) {
 		var id = result.data.current_observation.station_id
 		history[city] = id;
 		localStorage.setItem('searchHistory', JSON.stringify(history));
-		weather.searchHistory = JSON.parse(localStorage.getItem('searchHistory'));
+		// get updated search history
+		$scope.searchHistory = JSON.parse(localStorage.getItem('searchHistory'));
+		// convert search history to array for use with ionic slide changes
+		searchArray = Object.keys($scope.searchHistory);
+		// console.log(searchArray);
+		// console.log("SEARCH HISTORY", $scope.searchHistory);
 	}
+	// Called to navigate to the main app
+	$scope.startApp = function() {
+		$state.go('main');
+	};
+	$scope.next = function() {
+		$ionicSlideBoxDelegate.next();
+	};
+	$scope.previous = function() {
+		$ionicSlideBoxDelegate.previous();
+	};
+
+	// Called each time the slide changes
+	$scope.slideChanged = function(index) {
+		$scope.getOldSearch(searchArray[index]);
+		$scope.slideIndex = index;
+	};
 
 
 	//----------------//
@@ -115,6 +139,9 @@ starter.controller("weatherCtrl", function($scope, $http, $q) {
 	});; //end q
 
 
+	setTimeout(function(){
+		$ionicSlideBoxDelegate.update();
+	},1000);
 
 
 });
