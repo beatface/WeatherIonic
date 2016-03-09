@@ -44,8 +44,7 @@ starter.controller("weatherCtrl", function($scope, $http, $q, $ionicSlideBoxDele
 		$scope.searchHistory = JSON.parse(localStorage.getItem('searchHistory'));
 		// convert search history to array for use with ionic slide changes
 		searchArray = Object.keys($scope.searchHistory);
-		// console.log(searchArray);
-		// console.log("SEARCH HISTORY", $scope.searchHistory);
+		$ionicSlideBoxDelegate.update();
 	}
 	// Called to navigate to the main app
 	$scope.startApp = function() {
