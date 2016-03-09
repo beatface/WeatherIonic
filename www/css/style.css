@@ -1,6 +1,19 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	font-family: 'Lato', sans-serif !important;
+}
 
 img {
 	margin-top: 10%;
+}
+
+.slider-slide, .pane {
+	background-color: #d3dbdb;
 }
 
 #content {
@@ -15,6 +28,12 @@ div.slider {
 	height: 92%;
 }
 
+#forecast-container {
+	margin-top: 45px;
+}
+.fc-date {
+	font-size: .8em;
+}
 .forecast-day {
 	display: inline-block;
 	width: 20%;
@@ -37,31 +56,31 @@ div.slider {
 }
 
 .chancetstorms {
-	background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/sm-bgds/rain.JPG) no-repeat center top;
+	background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/sm-bgds/rain.JPG) no-repeat center top;
 }
 .fog {
-	background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/sm-bgds/fog.JPG) no-repeat center top;
+	background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/sm-bgds/fog.JPG) no-repeat center top;
 }
 .chancerain {
-	background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/sm-bgds/light-rain.JPG) no-repeat center top;
+	background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/sm-bgds/light-rain.JPG) no-repeat center top;
 }
 .clear {
-	background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/sm-bgds/clear-day.JPG) no-repeat center top;
+	background: linear-gradient(0deg, #d3dbdb 25%, transparent), #fff url(../img/sm-bgds/clear-day.JPG) no-repeat center top;
 }
 .rain {
-	background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/sm-bgds/rain.JPG) no-repeat center top;
+	background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/sm-bgds/rain.JPG) no-repeat center top;
 }
 .cloudy {
-	background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/sm-bgds/cloudy.JPG) no-repeat center top;
+	background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/sm-bgds/cloudy.JPG) no-repeat center top;
 }
 .mostlycloudy {
-	background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/sm-bgds/heavy-clouds.JPG) no-repeat center top;
+	background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/sm-bgds/heavy-clouds.JPG) no-repeat center top;
 }
 .partlycloudy {
-	background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/sm-bgds/fog.JPG) no-repeat center top;
+	background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/sm-bgds/fog.JPG) no-repeat center top;
 }
 .snow {
-	background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/sm-bgds/snow.JPG) no-repeat center top;
+	background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/sm-bgds/snow.JPG) no-repeat center top;
 }
 
 /**********************/
@@ -77,41 +96,47 @@ div.slider {
 	#forecast-container {
 		margin-top: 15%;
 	}
+	#city-header {
+		padding-top: 35px;
+	}
+	img {
+		margin-top: 8%;
+	}
 
 	.chancetstorms {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/rain.JPG) no-repeat center bottom;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/rain.JPG) no-repeat center bottom;
 		background-size: cover;
 	}
 	.fog {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/fog.JPG) no-repeat center bottom;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/fog.JPG) no-repeat center bottom;
 		background-size: cover;
 	}
 	.chancerain {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/light-rain.JPG) no-repeat center bottom;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/light-rain.JPG) no-repeat center bottom;
 		background-size: cover;
 	}
 	.clear {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/clear-day.JPG) no-repeat center bottom;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/clear-day.JPG) no-repeat center bottom;
 		background-size: cover;
 	}
 	.rain {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/rain.JPG) no-repeat center bottom;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/rain.JPG) no-repeat center bottom;
 		background-size: cover;
 	}
 	.cloudy {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/cloudy.JPG) no-repeat center bottom;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/cloudy.JPG) no-repeat center bottom;
 		background-size: cover;
 	}
 	.mostlycloudy {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/heavy-clouds.JPG) no-repeat center bottom;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/heavy-clouds.JPG) no-repeat center bottom;
 		background-size: cover;
 	}
 	.partlycloudy {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/fog.JPG) no-repeat center bottom;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/fog.JPG) no-repeat center bottom;
 		background-size: cover;
 	}
 	.snow {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/snow.JPG) no-repeat center bottom;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/snow.JPG) no-repeat center bottom;
 		background-size: cover;
 	}
 }
@@ -125,43 +150,49 @@ div.slider {
 		height: 100%;
 	}
 	#forecast-container {
-		margin-top: 12%;
+		margin-top: 8%;
+	}
+	#city-header {
+		padding-top: 35px;
+	}
+	img {
+		margin-top: 6%;
 	}
 
 	.chancetstorms {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/rain.JPG) no-repeat center center;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/rain.JPG) no-repeat center center;
 		background-size: cover;
 	}
 	.fog {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/fog.JPG) no-repeat center center;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/fog.JPG) no-repeat center center;
 		background-size: cover;
 	}
 	.chancerain {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/light-rain.JPG) no-repeat center center;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/light-rain.JPG) no-repeat center center;
 		background-size: cover;
 	}
 	.clear {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/clear-day.JPG) no-repeat center center;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/clear-day.JPG) no-repeat center center;
 		background-size: cover;
 	}
 	.rain {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/rain.JPG) no-repeat center center;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/rain.JPG) no-repeat center center;
 		background-size: cover;
 	}
 	.cloudy {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/cloudy.JPG) no-repeat center center;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/cloudy.JPG) no-repeat center center;
 		background-size: cover;
 	}
 	.mostlycloudy {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/heavy-clouds.JPG) no-repeat center center;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/heavy-clouds.JPG) no-repeat center center;
 		background-size: cover;
 	}
 	.partlycloudy {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/fog.JPG) no-repeat center center;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/fog.JPG) no-repeat center center;
 		background-size: cover;
 	}
 	.snow {
-		background: linear-gradient(0deg, white 5%, transparent), #fff url(../img/backgrounds/snow.JPG) no-repeat center center;
+		background: linear-gradient(0deg, #d3dbdb 15%, transparent), #fff url(../img/backgrounds/snow.JPG) no-repeat center center;
 		background-size: cover;
 	}
 }
