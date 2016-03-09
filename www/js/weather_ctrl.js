@@ -12,6 +12,7 @@ starter.controller("weatherCtrl", function($scope, $http, $q, $ionicSlideBoxDele
 	var searchArray;
 
 	var weatherIcons = {
+		chancetstorms: "../img/weather-icons/day-stormy.png",
 		fog: "../img/weather-icons/day-light-clouds.png",
 		chancerain: "../img/weather-icons/day-light-rain.png",
 		clear: "../img/weather-icons/day-clear.png",
