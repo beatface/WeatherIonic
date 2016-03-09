@@ -12,6 +12,10 @@ img {
 	margin-top: 10%;
 }
 
+#deletebtn {
+	margin-top: 20px;
+}
+
 .slider-slide, .pane {
 	background-color: #d3dbdb;
 }
@@ -94,7 +98,7 @@ div.slider {
 		height: 100%;
 	}
 	#forecast-container {
-		margin-top: 15%;
+		margin-top: 12%;
 	}
 	#city-header {
 		padding-top: 35px;
@@ -154,6 +158,11 @@ div.slider {
 	}
 	#city-header {
 		padding-top: 35px;
+	}
+	#deletebtn {
+		position: absolute;
+		left: 80px;
+		bottom: 15px;
 	}
 	img {
 		margin-top: 6%;

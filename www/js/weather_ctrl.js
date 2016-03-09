@@ -1,8 +1,6 @@
 starter.controller("weatherCtrl", function($scope, $http, $q, $ionicSlideBoxDelegate) {
 
 
-	// var weather = this;
-
 	$scope.lat = "--";
 	$scope.long = "--";
 
@@ -10,6 +8,7 @@ starter.controller("weatherCtrl", function($scope, $http, $q, $ionicSlideBoxDele
 	$scope.desc = "--";
 
 	var searchArray;
+	var history;
 
 	var weatherIcons = {
 		chancetstorms: "../img/weather-icons/day-stormy.png",
@@ -36,7 +35,7 @@ starter.controller("weatherCtrl", function($scope, $http, $q, $ionicSlideBoxDele
 
 	function setLocalStorage(result) {
 		console.log(result);
-		var history = JSON.parse(localStorage.getItem('searchHistory')) || {};
+		history = JSON.parse(localStorage.getItem('searchHistory')) || {};
 		var city = result.data.current_observation.display_location.full;
 		var id = result.data.current_observation.station_id
 		history[city] = id;
@@ -47,6 +46,17 @@ starter.controller("weatherCtrl", function($scope, $http, $q, $ionicSlideBoxDele
 		searchArray = Object.keys($scope.searchHistory);
 		$ionicSlideBoxDelegate.update();
 	}
+
+	function deleteSearch(search) {
+		delete history[search];
+		localStorage.setItem('searchHistory', JSON.stringify(history));
+		$scope.searchHistory = JSON.parse(localStorage.getItem('searchHistory'));
+		// convert search history to array for use with ionic slide changes
+		searchArray = Object.keys($scope.searchHistory);
+		$ionicSlideBoxDelegate.update();
+	}
+
+
 	// Called to navigate to the main app
 	$scope.startApp = function() {
 		$state.go('main');
@@ -87,7 +97,9 @@ starter.controller("weatherCtrl", function($scope, $http, $q, $ionicSlideBoxDele
 		});
 	};
 
-
+	$scope.deleteCity = function(search) {
+		deleteSearch(search)
+	};
 
 	//------------//
 	// AUTOIP DATA
@@ -113,7 +125,9 @@ starter.controller("weatherCtrl", function($scope, $http, $q, $ionicSlideBoxDele
 		});
 	});; //end q
 
-
+	if (document.documentElement.clientWidth > 800) {
+		alert("Hey there! I noticed you're viewing this on a large screen. For optimal performace, try checking it out at phone screen sizes!")
+	}
 
 
 	//-----------------//
